@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cost Escalation Analysis</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style type="text/css">
+    .fbg {
+      background: #EAEEF2;
+      padding: 0px 10px 30px 10px;
+      margin-top:10px;
+      border-radius: 15px;
+    }
+    .headdiv
+    {
+      text-align: center;
+      position: relative;
+      padding: 15px 0;
+      color: #0072bc;
+    }
+    .headdiv:before {
+        content: "";
+        display: block;
+        width: 25%;
+        height: 2px;
+        background: #0072bc;
+        left: 0;
+        top: 50%;
+        position: absolute;
+      }
+      .headdiv:after {
+        content: "";
+        display: block;
+        width: 25%;
+        height: 2px;
+        background: #0072bc;
+        right: 0;
+        top: 50%;
+        position: absolute;
+      }
+
+      @media (min-width:550px) and (max-width:768px)
+      {
+        .headdiv:before, .headdiv:after {
+          width: 10%;
+        }
+      }
+
+      @media(max-width:550px)
+      {
+        .headdiv:before, .headdiv:after {
+          width: 0;
+        }
+        table tr{
+          display: block;
+        }
+      }
+
+
+      .dcard {
+        padding:1em;
+        background: #fff;
+        
+        border: 1px solid #0072bc;
+        border-left: 14px solid #0072bc;
+        border-radius: 10px;
+        margin-bottom: 24px;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+min-height: 110px;
+      }
+      .dcard h5 {
+        font-size: 18px;
+        color: #474242;
+        font-weight: 800;
+      }
+      .dcard h6 {
+        font-size: 13px;
+        color: #000;
+        font-weight: 900;
+      }
+      .dcard p {
+        font-size: 12px;
+        color: #736969;
+        font-weight: 600;
+      }
+      .dcard h2 {
+        text-align: center;
+        color: #0072bc;
+        font-weight: 600;
+        font-size: 28px;
+        margin: -10px 0;
+      }
+      .inlinecard
+      {
+        display: flex;
+        background: #eaeef2;
+        justify-content: space-around;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        padding: 1em;
+        gap:1em;
+
+      }
+      .incard{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        column-gap: 1em;
+      }
+      .trtable{
+        width: 100%;
+        background: #fff;
+        
+        text-align: center;
+        border: 1px solid #0072bc;
+        
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+      .trtable thead 
+      {
+        background: #0072bc!important;
+        color: #fff;
+        border-radius: 10px;
+      }
+      
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/PricolLogo.png" alt="">
+        <span class="d-none d-lg-block"></span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <h4> Cost Escalation Analysis</h4>
+    </div><!-- End Logo -->
+
+    
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+      <li class="nav-heading">Pages</li>
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <div class="container">
+      <div class="row ">
+        <div class="col-lg-12">
+          <form>
+          <div class="inlinecard">
+            <div class="incard">
+              <div class="title">Financial Year:</div>
+              <div class="field">
+                  <select class="form-select" required>
+                    <option selected value="">Choose...</option>
+                    <option>...</option>
+                  </select>
+              </div>
+            </div>
+            <div class="incard">
+              <div class="title">Quarter :</div>
+              <div class="field">
+                  <select class="form-select" required>
+                    <option selected value="">Choose...</option>
+                    <option>...</option>
+                  </select>
+              </div>
+            </div>
+            <div class="incard">
+              <div class="title">Customer :</div>
+              <div class="field">
+                  <select class="form-select" required>
+                    <option selected value="">Choose...</option>
+                    <option>...</option>
+                  </select>
+              </div>
+            </div>
+            
+            <div><button class="btn btn-primary" type="submit">Submit</button></div>
+          </div>
+          </form>
+        </div>
+
+        
+        <div class="col-lg-12">
+          <h5 class="headdiv">Financial Period between 01-04-23 and 30-06-23</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="dcard">
+            <h5>Product Forex</h5>
+            <p>10-11-2023</p>
+            <h2>0.00</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="dcard">
+            <h5>R/M Forex</h5>
+            <p>10-11-2023</p>
+            <h2>0.00</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="dcard">
+            <h5>Raw Material</h5>
+            <p>10-11-2023</p>
+            <h2>0.00</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="dcard">
+            <h6>RM Cost for BO Component(Vendor BOM)</h6>
+            <p>10-11-2023</p>
+            <h2>0.00</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="dcard">
+            <h5> Premium Freight</h5>
+            <p>10-11-2023</p>
+            <h2>0.00</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="dcard">
+            <h5> One time Purchase</h5>
+            <p>10-11-2023</p>
+            <h2>7590.00</h2>
+          </div>
+        </div>
+        <div class=" offset-lg-2 col-lg-4 col-md-6">
+          <div class="dcard">
+            <h5>Miscellaneous</h5>
+            <p>10-11-2023</p>
+            <h2>0.00</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="dcard">
+            <h5>Total Value</h5>
+            <p>10-11-2023</p>
+            <h2>0.00</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-lg-12 table-responsive">
+        <table class=" trtable" cellpadding="15px">
+          <thead>
+            <tr>
+              <th>System Calculated</th>
+              <th>User Calculated</th>
+              <th>Set off Value</th>
+              <th>Claimed Amount</th>
+              <th>Balance 1</th>
+              <th>Balance 2</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>7,675.57</td>
+                <td>393,805.00</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>7,675.57</td>
+                <td>393,805.00</td>
+              </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col-lg-12">
+        <br>
+        <h4><b>Note:</b></h4>
+          <p>Balance 1 (System Calculated + Set off - Claimed)</p>
+          <p>Balance 2 (User Calculated + Set off - Claimed)</p>
+        
+      </div>
+    </div>
+    </div>
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
